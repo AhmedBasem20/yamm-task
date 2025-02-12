@@ -1,13 +1,8 @@
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
-
-interface ColumnConfig<T> {
-    key: string;
-    label: string;
-    render?: (row: T) => React.ReactNode;
-}
+import { TableHeader } from "../types";
 
 interface TableProps<T> {
-    headers: ColumnConfig<T>[];
+    headers: TableHeader<T>[];
     data: T[];
 }
 
@@ -29,7 +24,7 @@ const DataTable = <T extends object>({
             <Table>
                 <TableHead sx={{ backgroundColor: "#EBD9FF" }}>
                     <TableRow >
-                        {headers.map((header: any) => (
+                        {headers.map((header: TableHeader<T>) => (
                             <TableCell sx={{
                                 fontWeight: "bold",
                                 color: "#6C27FF",
@@ -42,8 +37,8 @@ const DataTable = <T extends object>({
                 <TableBody>
                     {data.map((row) => (
                         <TableRow>
-                            {headers.map((header: any) => (
-                                <TableCell key={header.id}>{header.render(row)}</TableCell>
+                            {headers.map((header: TableHeader<T>) => (
+                                <TableCell key={header.id}>{header.render ? header.render(row) : row[header.id]}</TableCell>
                             ))}
                         </TableRow>
                     ))}

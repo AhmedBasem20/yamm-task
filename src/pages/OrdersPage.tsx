@@ -2,23 +2,14 @@ import { useEffect, useState } from "react";
 import { Chip } from "@mui/material";
 import { fetchOrders } from "../api/mockServer";
 import DataTable from "../components/DataTable";
+import { Order, TableHeader } from "../types";
 
-interface Order {
-    id: string;
-    reason: string;
-    store_name: string;
-    store_logo: string;
-    store_url: string;
-    amount: number;
-    active: boolean;
-    decision: string | null;
-}
-const headers: any = [
+const headers: TableHeader<Order>[] = [
     { id: 'id', label: 'ID', render: (row) => row.id },
     { id: 'reason', label: 'Reason', render: (row) => row.reason },
     {
         id: 'store_name', label: 'Store', render: (row) =>
-        <a href={row.store_url} target="_blank" rel="noopener noreferrer">
+        <a href={row.store_url} target="_blank">
             {row.store_name}
         </a>
     },
