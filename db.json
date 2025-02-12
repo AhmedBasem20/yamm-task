@@ -1,0 +1,58 @@
+{
+  "refundOrders": [
+    {
+      "id": "ORD121",
+      "reason": "Defective item",
+      "store_name": "Tech Store",
+      "store_logo": "https://via.placeholder.com/50",
+      "store_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "amount": 120.99,
+      "active": true,
+      "decision": "Not yet",
+      "items": [
+        {
+          "id": "ITEM1",
+          "name": "Laptop",
+          "price": 1000,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "ORD122",
+      "reason": "Defective item",
+      "store_name": "Tech Store",
+      "store_logo": "https://via.placeholder.com/50",
+      "store_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "amount": 120.99,
+      "active": true,
+      "decision": "Accept",
+      "items": [
+        {
+          "id": "ITEM1",
+          "name": "Laptop",
+          "price": 1000,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "ORD123",
+      "reason": "Defective item",
+      "store_name": "Tech Store",
+      "store_logo": "https://via.placeholder.com/50",
+      "store_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "amount": 120.99,
+      "active": true,
+      "decision": "Escalate",
+      "items": [
+        {
+          "id": "ITEM1",
+          "name": "Laptop",
+          "price": 1000,
+          "quantity": 1
+        }
+      ]
+    }
+  ]
+}
