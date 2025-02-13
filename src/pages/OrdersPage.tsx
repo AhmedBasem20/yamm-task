@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Chip } from "@mui/material";
 import { fetchOrders } from "../api/mockServer";
+import OrderActions from "../components/OrderActions";
 import DataTable from "../components/DataTable";
 import { Order, TableHeader } from "../types";
 
@@ -14,7 +15,10 @@ const headers: TableHeader<Order>[] = [
         </a>
     },
     { id: 'amount', label: 'Amount', render: (row) => `$${row.amount}` },
-    { id: 'items', label: 'Items', render: (row) => <Chip label={row.items.length}></Chip> }
+    { id: 'items', label: 'Items', render: (row) => <Chip label={row.items.length}></Chip> },
+    {
+        id: 'actions', label: 'Actions', render: (row) => <OrderActions orderId={row.id} active={row.active} decision={row.decision} />
+    },
 ];
 
 const OrdersPage = () => {
