@@ -6,14 +6,32 @@
       "store_name": "Tech Store",
       "store_logo": "https://via.placeholder.com/50",
       "store_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-      "amount": 120.99,
+      "amount": 2600,
       "active": true,
-      "decision": "Not yet",
+      "decision": null,
       "items": [
         {
           "id": "ITEM1",
           "name": "Laptop",
           "price": 1000,
+          "quantity": 1
+        },
+        {
+          "id": "ITEM2",
+          "name": "Headphone",
+          "price": 300,
+          "quantity": 2
+        },
+        {
+          "id": "ITEM3",
+          "name": "Book",
+          "price": 50,
+          "quantity": 4
+        },
+        {
+          "id": "ITEM4",
+          "name": "TV",
+          "price": 800,
           "quantity": 1
         }
       ]
@@ -25,8 +43,8 @@
       "store_logo": "https://via.placeholder.com/50",
       "store_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
       "amount": 120.99,
-      "active": true,
-      "decision": "Accept",
+      "active": false,
+      "decision": "Reject",
       "items": [
         {
           "id": "ITEM1",
@@ -44,7 +62,7 @@
       "store_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
       "amount": 120.99,
       "active": true,
-      "decision": "Escalate",
+      "decision": "Accept",
       "items": [
         {
           "id": "ITEM1",

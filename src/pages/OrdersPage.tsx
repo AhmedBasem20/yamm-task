@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Chip } from "@mui/material";
+import { Avatar, Chip } from "@mui/material";
 import { fetchOrders } from "../api/mockServer";
 import OrderActions from "../components/OrderActions";
 import DataTable from "../components/DataTable";
@@ -9,10 +9,14 @@ const headers: TableHeader<Order>[] = [
     { id: 'id', label: 'ID', render: (row) => row.id },
     { id: 'reason', label: 'Reason', render: (row) => row.reason },
     {
-        id: 'store_name', label: 'Store', render: (row) =>
+        id: 'store_name', label: 'Store', render: (row) => (
+        <div style={{display:'flex', alignItems:'center', gap:'10px'}}>
+        <Avatar sx={{ width: 32, height: 32 }} alt="Store Logo" />
         <a href={row.store_url} target="_blank">
             {row.store_name}
         </a>
+        </div>
+        )
     },
     { id: 'amount', label: 'Amount', render: (row) => `$${row.amount}` },
     { id: 'items', label: 'Items', render: (row) => <Chip label={row.items.length}></Chip> },

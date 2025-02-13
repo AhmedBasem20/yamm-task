@@ -11,11 +11,11 @@ interface OrderActionsProps {
   decision: string | null;
 }
 
-const decisionOptions = ["Accept", "Reject", "Escalate"];
+const decisionOptions: string[] = ["Accept", "Reject", "Escalate"];
 
 const OrderActions: React.FC<OrderActionsProps> = ({ orderId, active, decision }) => {
   const [orderActive, setOrderActive] = useState<boolean>(active);
-  const [orderDecision, setOrderDecision] = useState<string>(decision || "Not yet");
+  const [orderDecision, setOrderDecision] = useState<string | null>(decision);
   const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
   const navigate = useNavigate();
 
@@ -48,7 +48,12 @@ const OrderActions: React.FC<OrderActionsProps> = ({ orderId, active, decision }
 
   return (
     <div style={containerStyle}>
-      <Select value={orderDecision} onChange={handleDecisionChange} size="small">
+      <Select value={orderDecision || "Not yet"} onChange={handleDecisionChange} size="small">
+        {!orderDecision &&
+          <MenuItem key="not-yet" value="Not yet" disabled>
+            Not yet
+          </MenuItem>
+        }
         {decisionOptions.map((option) => (
           <MenuItem key={option} value={option}>
             {option}

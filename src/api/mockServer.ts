@@ -23,3 +23,9 @@ export const updateOrderDecision = async (id: string, decision: string) => {
   });
   if (!response.ok) throw new Error("Failed to update order decision");
 };
+
+export const fetchOrderDetails = async (id: string) => {
+    const response = await fetch(`${API_URL}/${id}`);
+    if (!response.ok) throw new Error("Failed to fetch orders");
+    return await response.json();
+  };

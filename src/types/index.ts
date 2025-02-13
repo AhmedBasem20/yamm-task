@@ -3,7 +3,12 @@ export type TableHeader<T> = {
     label: string;
     render?: (row: T) => React.ReactNode;
 }
-
+export type Item = {
+    id: string;
+    name: string;
+    price: number;
+    quantity: number;
+}
 export type Order = {
     id: string;
     reason: string;
@@ -13,5 +18,5 @@ export type Order = {
     amount: number;
     active: boolean;
     decision: string | null;
-    items: object[];
+    items: Item[];
 }
