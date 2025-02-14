@@ -12,6 +12,7 @@ A simple **Refund Orders Dashboard** built with **React**, **Vite**, **Typescrip
 ## Reusable Table Component  
 
 The `DataTable` component is a reusable table designed to handle various datasets with minimal configuration.  
+The design of this table component, particularly the use of **render props** for flexible cell rendering, is inspired by [this Medium article](https://medium.com/@rakeshraj2097/the-best-way-to-write-a-reusable-table-component-in-react-from-props-to-render-props-775f0812c136)
 
 ### Usage  
 
